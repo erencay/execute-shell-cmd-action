@@ -1,0 +1,14 @@
+name: "Execute Shell Command"
+description: "Executes shell commands and prints result as output"
+inputs:
+    cmd:
+        description: Command to execute
+        required: true
+outputs:
+    result:
+        description: Result of execution
+runs:
+    image: Dockerfile
+    using: docker
+    args:
+        - ${{ inputs.cmd }}
